@@ -1,0 +1,350 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-style: arial;
+	scroll-behavior: smooth;
+}
+
+
+.container{
+	scroll-snap-type: y mandatory ;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+section{
+
+	scroll-snap-align: start;
+	height: 100vh;
+}
+
+.nav{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	background:/* Created with https://www.css-gradient.com */
+	background: rgba(183, 195, 181, 1.0);
+	background: -webkit-linear-gradient(top left, rgba(183, 195, 181, 1.0), rgba(148, 190, 187, 1.0));
+	background: -moz-linear-gradient(top left, rgba(183, 195, 181, 1.0), rgba(148, 190, 187, 1.0));
+	background: linear-gradient(to bottom right, rgba(183, 195, 181, 1.0), rgba(148, 190, 187, 1.0));
+}
+
+.logo{
+	flex: 1;
+	margin-left: 20px;
+
+}
+
+.head{
+	flex: 4;
+
+}
+
+.logo img{
+	border: 1px solid #D4B08B;
+	border-radius: 8px;
+}
+
+
+.head a{
+	text-decoration: none;
+	margin-left: 100px;
+	font-size: 22px;
+	color: lightgoldenrodyellow;
+	transition: 0.3;
+}
+
+.head a:hover{
+	color: #CC6443;
+}
+
+.other{
+	float: right;
+	margin-right: 30px;
+}
+
+
+
+#one{
+	background-size: cover;
+	background-image: url(image/R.jpg);
+}
+
+#one h1{
+	position: relative;
+	top: 12%;
+	text-align: center;
+	font-size: 60px;
+	animation: welcome 1.5s linear  alternate forwards running;
+	font-family: 'Edu VIC WA NT Beginner', cursive;
+	font-family: 'Source Code Pro', monospace;
+	font-family: 'Square Peg', cursive;
+}
+
+@keyframes welcome{
+	0%{ transform: scale(0.1);
+		color: #B2B5FC;
+		}
+
+	25%{ transform: scale(0.3);
+		color: #94B5FC; 
+		}
+	
+	50%{
+		
+		transform: scale(0.5);
+		color:#94AACB ; 
+		
+		text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+	}
+
+	75%{
+		transform: scale(0.8);
+		color: #71AEE0; 
+	
+		text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+	}
+	
+	100%{
+		transform: scale(1.0);
+		color:#7EA3D6; 
+		top: 12%;
+		font-weight: bolder;
+		text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+	}
+}
+
+
+
+#two{
+	background: lightgray;
+}
+
+.head1{
+	text-align: center;
+	padding-top: 20px;
+	font-size: 50px;
+	text-shadow:2px 2px 3px rgba(0, 0, 0, 0.1);
+	font-family: 'Edu VIC WA NT Beginner', cursive;
+	font-family: 'Source Code Pro', monospace;
+	font-family: 'Square Peg', cursive;
+}
+
+.all_content{
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr 1fr;
+	grid-auto-rows: 250px 250px;
+	grid-template-areas: 
+	"magic magic street winter"
+	"autumn view street summer";
+	grid-gap: 15px;
+	transform: scale(1.0);
+}
+
+
+.img{
+	width: 100%;
+	height: 100%;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+
+.img:hover{
+	transition: 1s ;
+	transform: scale(1.2);
+}
+
+span{	
+	position: relative;
+	bottom: 40px;
+	border: 1px solid white;
+	padding: 15px;
+	background:ghostwhite;
+}
+
+span a{
+	text-decoration: none;
+	color: black;
+}
+
+span:hover a{
+	
+	text-decoration: underline;
+	padding: 20px;
+	transition: 0.5s;
+}
+
+.Inspiring1,.Inspiring2,.Inspiring3,
+.Inspiring4,.Inspiring5,.Inspiring6{
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.Inspiring1{
+	grid-area: magic;	
+}
+
+.Inspiring2{
+	grid-area: winter;
+}
+
+.Inspiring3{
+	grid-area: autumn;
+}
+
+.Inspiring4{
+	grid-area: street;
+}
+
+.Inspiring5{
+	grid-area: view;
+}
+
+.Inspiring6{
+	grid-area: summer;
+}
+
+
+#three{
+	background: #E7C9E0;
+}
+
+.all_contentA{
+	margin-top: 20px;
+	justify-content: center;
+	display: grid;
+	grid-template-columns:300px 300px 300px;
+	grid-auto-rows: 250px 250px;
+	grid-template-areas: 
+	"berlin berlin museum"
+	"jewish acient acient";
+	grid-gap: 25px;
+	transform: scale(1.0);
+}
+
+.Curture1,.Curture2,.Curture3,.Curture4{
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.Curture1{
+	grid-area: berlin;
+}
+
+.Curture2{
+	grid-area:museum;
+}
+
+.Curture3{
+	grid-area:jewish;
+}
+
+.Curture4{
+	grid-area: acient;
+}
+
+
+#four{
+	background:#B8C5FF;
+}
+
+.all_contentB{
+	margin-top: 20px;
+	justify-content: center;
+	display: grid;
+	grid-template-columns:400px 300px 300px;
+	grid-auto-rows: 250px 250px;
+	grid-template-areas: 
+	"palace regen sleep"
+	"palace hausen .";
+	grid-gap: 25px;
+	transform: scale(1.0);
+}
+
+.Palace1,.Palace2,.Palace3,.Palace4{
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+
+.Palace1{
+	grid-area: palace;
+}
+
+.Palace2{
+	grid-area:hausen;
+	width: 400px;
+	margin-left:125px;
+}
+
+.Palace3{
+	grid-area:regen;
+}
+
+.Palace4{
+	grid-area: sleep;
+}
+
+
+.five{
+	background:white;
+	height: 500px;
+}
+
+.summary{
+	display:flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.summary h3{
+	color: gray;
+	text-shadow:2px 2px 3px rgba(0, 0, 0, 0.1);
+	font-style: oblique;
+}
+
+.list li a{
+	text-decoration: none;
+	line-height: 20px;
+	color: gray;
+}
+
+.line{
+	width: 80%;
+	margin: auto;
+	height: 2px;
+	background:lightgray;
+
+}
+
+.foot .fa-brands{
+	position: relative;
+	top: 15px;
+	left: 45%;
+	padding: 20px;
+}
+
+footer{
+	font-style: oblique;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.arrow{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	background: darkred;
+	bottom: 40px;
+	right: 50px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	font-size: 25px;
+}
