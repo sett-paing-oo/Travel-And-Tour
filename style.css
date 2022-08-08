@@ -6,24 +6,22 @@
 	scroll-behavior: smooth;
 }
 
-
-.container{
-	scroll-snap-type: y mandatory ;
-	height: 100vh;
-	overflow-y: scroll;
+body{
+	background: rgb(238,174,202,);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(180,222,187,1) 50%, rgba(148,187,233,1) 100%);
 }
 
-section{
 
-	scroll-snap-align: start;
-	height: 100vh;
-}
+
+
+									/* German Tour: Navication Bar */
+
+
 
 .nav{
 	display: flex;
 	align-items: center;
 	width: 100%;
-	height: 60px;
 	background:/* Created with https://www.css-gradient.com */
 	background: rgba(183, 195, 181, 1.0);
 	background: -webkit-linear-gradient(top left, rgba(183, 195, 181, 1.0), rgba(148, 190, 187, 1.0));
@@ -34,12 +32,19 @@ section{
 .logo{
 	flex: 1;
 	margin-left: 20px;
-
 }
 
-.head{
-	flex: 4;
+nav{
+	flex: 3;
+}
 
+.cart{
+	flex: 1;
+}
+
+.cart img{
+	float: right;
+	margin-right: 50px;
 }
 
 .logo img{
@@ -47,23 +52,70 @@ section{
 	border-radius: 8px;
 }
 
-
-.head a{
-	text-decoration: none;
-	margin-left: 100px;
-	font-size: 22px;
-	color: lightgoldenrodyellow;
-	transition: 0.3;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #B5C3FA;
 }
 
-.head a:hover{
-	color: #CC6443;
+nav ul li {
+
+  float:left;
 }
 
-.other{
-	float: right;
-	margin-right: 30px;
+nav ul li a {
+
+  display: block;
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  padding: 16px 35px;
+  text-decoration: none;
 }
+
+.active{
+	color: darkred;
+	background: #D6E9FD;
+	border-radius: 5px;
+}
+
+li a:hover:not(.active){
+	color: darkred;
+	transition: 0.5s;
+}
+
+@media screen and (max-width: 1200px)
+{
+	.nav{flex-direction: column;}
+	.logo{margin-bottom: 20px;}
+	nav{margin-bottom: 20px;}
+	.cart{margin-bottom: 20px;}.cart img{margin-right: unset;}
+}
+@media screen and (max-width: 600px)
+{
+	.nav{flex-direction: column;}
+
+	nav{width: 100%;}
+
+	.cart img{margin-right: unset;}
+
+	nav ul li {	float: none;}
+
+	.logo{margin-bottom: 20px;}
+
+	nav{margin-bottom: 20px;}
+
+	.cart{margin-bottom: 20px;}
+}
+
+
+
+
+
+
+								/* German Tour: HomePage */
+
 
 
 
@@ -117,9 +169,16 @@ section{
 }
 
 
+@media screen and (max-width: 600px)
+{
+	#one{
+		background-image: none;
+	}
+}
+
 
 #two{
-	background: lightgray;
+	background: #CDB4DB;
 }
 
 .head1{
@@ -133,9 +192,10 @@ section{
 }
 
 .all_content{
+
 	margin-top: 30px;
 	display: grid;
-	grid-template-columns:1fr 1fr 1fr 1fr;
+	grid-template-columns:repeat(auto-fit, 1fr);
 	grid-auto-rows: 250px 250px;
 	grid-template-areas: 
 	"magic magic street winter"
@@ -207,9 +267,42 @@ span:hover a{
 	grid-area: summer;
 }
 
+@media screen and (max-width: 1200px)
+{
+	.all_content{
+		grid-gap: 25px;
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns:400px 400px;
+		grid-auto-rows: 300px 300px 300px ;
+		grid-template-areas:
+		"magic winter"
+		"autumn street"
+		"view summer";
+	}
+}
+@media screen and (max-width: 600px)
+{
+	.all_content{
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns:500px;
+		grid-auto-rows: 300px 300px 300px 300px 300px 300px;
+		grid-template-areas:
+		"magic"
+		"winter"
+		"autumn"
+		"street"
+		"view"
+		"summer";
+	}
+}
+
+
+
 
 #three{
-	background: #E7C9E0;
+	background: #A2D2FF;
 }
 
 .all_contentA{
@@ -246,10 +339,41 @@ span:hover a{
 	grid-area: acient;
 }
 
+@media screen and (max-width: 1200px)
+{
+	.all_contentA{
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns:400px 400px;
+		grid-auto-rows: 300px 300px ;
+		grid-template-areas:
+		"berlin museum"
+		"jewish acient"
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	.all_contentA{
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns:500px;
+		grid-auto-rows: 300px 300px 300px 300px ;
+		grid-template-areas:
+		"berlin"
+		"museum"
+		"jewish"
+		"acient";
+	}
+}
+
+
+
 
 #four{
-	background:#B8C5FF;
+	background:#BDE0FE;
 }
+
 
 .all_contentB{
 	margin-top: 20px;
@@ -259,7 +383,7 @@ span:hover a{
 	grid-auto-rows: 250px 250px;
 	grid-template-areas: 
 	"palace regen sleep"
-	"palace hausen .";
+	"palace hausen hausen";
 	grid-gap: 25px;
 	transform: scale(1.0);
 }
@@ -276,8 +400,6 @@ span:hover a{
 
 .Palace2{
 	grid-area:hausen;
-	width: 400px;
-	margin-left:125px;
 }
 
 .Palace3{
@@ -287,6 +409,43 @@ span:hover a{
 .Palace4{
 	grid-area: sleep;
 }
+
+@media screen and (max-width: 1200px)
+{
+	.all_contentB{
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns:400px 400px;
+		grid-auto-rows: 300px 300px ;
+		grid-template-areas:
+		"palace hausen"
+		"regen sleep"
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	.all_contentB{
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns:500px;
+		grid-auto-rows: 300px 300px 300px 300px ;
+		grid-template-areas:
+		"palace"
+		"hausen"
+		"regen"
+		"sleep";
+	}
+}
+
+
+
+
+
+
+
+								/*German Tour: Footer*/
+
 
 
 .five{
@@ -300,9 +459,11 @@ span:hover a{
 	justify-content: space-evenly;
 	margin-top: 30px;
 	margin-bottom: 50px;
+	background: white;
 }
 
 .summary h3{
+	margin-top: 15px;
 	color: gray;
 	text-shadow:2px 2px 3px rgba(0, 0, 0, 0.1);
 	font-style: oblique;
@@ -310,8 +471,13 @@ span:hover a{
 
 .list li a{
 	text-decoration: none;
-	line-height: 20px;
+	line-height: 25px;
 	color: gray;
+}
+
+.list li a:hover{
+	text-decoration: underline darkred;
+	transition: 0.5s ease-in-out;
 }
 
 .line{
@@ -319,7 +485,6 @@ span:hover a{
 	margin: auto;
 	height: 2px;
 	background:lightgray;
-
 }
 
 .foot .fa-brands{
@@ -337,14 +502,500 @@ footer{
 
 .arrow{
 	position: fixed;
-	width: 50px;
-	height: 50px;
-	background: darkred;
 	bottom: 40px;
 	right: 50px;
+	width: 55px;
+	height: 55px;
+	background: darkred;
 	text-decoration: none;
 	text-align: center;
-	line-height: 50px;
+	line-height: 55px;
 	color: white;
 	font-size: 25px;
+}
+
+@media screen and (max-width: 600px)
+{
+	.summary{	flex-direction: column;}
+
+	.foot .fa-brands{left: 35%;}
+
+}
+
+
+
+
+								/* German Tour: Packages */
+
+
+
+
+.line_in_package{
+	width: 80%;
+	margin: auto;
+	height: 2px;
+	margin-top: 70px;
+	background:black;
+	margin-bottom: 50px;
+	box-shadow:2px 3px 4px rgba(0, 0, 0, 0.5) ;
+}
+
+.all{
+	width: 250px;
+	height: 270px;
+	margin-left: 25%;
+}
+
+.flip_card{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 1s ease-in-out;
+	border: 1px solid gray;
+	border-radius: 8px;
+	box-shadow:2px 3px 4px rgba(0, 0, 0, 0.5) ;
+}
+
+.flip_card .front ,
+.flip_card .back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+} 
+
+.front{
+	backface-visibility: hidden;
+	background: rgba(238,174,202,0.4);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(180,182,222,1) 50%, rgba(148,187,233,1) 100%);
+	border-radius: 8px;
+	opacity: 0.9;
+}
+
+.back{
+	transform: rotateY(180deg);
+	background-image: url(image/schweincastle.jpg);
+	background-size: cover;
+	border-radius: 8px;
+}
+
+.all:hover .flip_card{
+	transform: rotateY(180deg);
+	box-shadow:2px 3px 4px rgba(0, 0, 0, 0.5) ;
+}
+.front .discount{
+	font-size: 60px;
+	text-align: center;
+	padding: 25px;
+	text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.front small{
+	font-size: 25px;
+}
+
+.front .line_in_front{
+	width: 230px;
+	margin: auto;
+	height: 2px;
+	background:black;
+	box-shadow:2px 3px 4px rgba(0, 0, 0, 0.5) ;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.front h1{
+	text-align: center;
+	font-style: oblique;
+	margin-bottom: 20px;
+}
+
+.front input{
+	justify-items: center;
+	padding: 5px 13px 5px 13px;
+	margin-left: 50%;
+	transform: translate(-50%,-50%);
+	cursor: pointer;
+	margin-top: 10px;
+	background: skyblue;
+	border-radius: 10px;
+
+}
+
+.front input:hover{
+
+	padding: 5px 18px 5px 18px;
+	transition: 0.2s ease-in-out;
+}
+
+
+.bundle{
+	display: flex;	
+}
+
+.content{
+	margin-left: 150px;
+	padding: 10px;
+}
+
+.bundle .content h1{
+	font-style: oblique;
+	color:black;
+	margin-top: 30px;
+	margin-bottom: 35px;
+	position: relative;
+}
+
+.content ul li{
+	font-size: 22px;
+	padding-bottom: 10px;
+	color:black;
+}
+
+@media screen and (max-width: 1200px)
+{
+	.bundle{display: block;}
+	.content h1{position: relative;left: -80px;}
+	.all{position: relative;left: 10%;}
+}
+
+@media screen and (max-width: 600px)
+{
+	.bundle{display: block;}
+
+	.content h1{position: relative;left: -55px;}
+}
+
+
+
+
+.pack1,.pack2,.pack3,.pack4,.pack5{
+	display: grid;
+	grid-template-columns: 2fr 4fr 1fr;
+	grid-auto-rows: 200px;
+	grid-template-areas: 
+	"pic place price";
+	justify-content: center;
+	margin-bottom: 30px;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.pic{
+	grid-area: pic;
+	border: 1px solid gray;
+}
+
+.para{
+	grid-area: place;
+	border: 1px solid gray;
+}
+
+.price{
+	grid-area: price;
+	border: 1px solid gray;
+}
+
+.price h3{
+	position: relative;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 25px;
+}
+
+.para h2{
+	font-style: oblique;
+	margin: 20px;
+	text-align: center;
+}
+
+.para p{
+	margin: 30px;
+	margin-top: 30px;
+}
+
+
+.price:hover{
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(214,222,180,1) 20%, rgba(148,187,233,1) 100%);
+}
+
+.price:hover h3{
+	font-size: 27px;
+}
+
+.pack1:hover{
+	box-shadow:4px 6px 7px rgba(0, 0, 0, 0.5);
+	width: 72%;
+	transition: 0.2s ease-out;
+}
+
+
+.pack2:hover{
+	box-shadow:4px 6px 7px rgba(0, 0, 0, 0.5) ;
+	width: 72%;
+	transition: 0.2s ease-out;
+}
+
+.pack3:hover{
+	box-shadow:4px 6px 7px rgba(0, 0, 0, 0.5) ;
+	width: 72%;
+	transition: 0.2s ease-out;
+}
+
+
+.pack4:hover{
+	box-shadow:4px 6px 7px rgba(0, 0, 0, 0.5) ;
+	width: 72%;
+	transition: 0.2s ease-out;
+}
+
+
+.pack5:hover{
+	box-shadow:4px 6px 7px rgba(0, 0, 0, 0.5) ;
+	width: 72%;
+	transition: 0.2s ease-out;
+}
+ 
+
+@media screen and (max-width: 600px)
+{
+	.pack1,.pack2,.pack3,.pack4,.pack5{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: 200px 200px 150px;
+	grid-template-areas: 
+	"pic"
+	"place"
+	"price";
+	width: 60%;
+	}
+
+	.pack1:hover{width: 63%;}
+	.pack2:hover{width: 63%;}
+	.pack3:hover{width: 63%;}
+	.pack4:hover{width: 63%;}
+	.pack5:hover{width: 63%;}
+}
+
+
+
+
+
+							/*German Tour : Sign Up/Log in Form*/
+
+
+
+
+
+.whole{
+	font-family:'Roboto',sans-serif;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.whole1{
+	font-family:'Roboto',sans-serif;
+	width: 100%;
+	height: 500px;
+	position: relative;
+	top: 50%;
+	line-height: 35px;
+}
+
+.signup{
+	
+	width: 27%;
+	min-height: 620px;
+	margin: auto;
+	margin-top: 30px;
+	border-radius: 8px;
+	background: rgb(140,187,103);
+	background: radial-gradient(circle, rgba(140,187,103,0.9) 25%, rgba(148,187,233,0.5) 100%);
+	backdrop-filter: blur(20px);
+}
+
+
+.signup2{
+	width: 27%;
+	min-height: 210px;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+h1{  
+	margin-top: 10px;
+	text-align: center;
+	padding-top: -30px;
+	font-weight: 10px;
+}
+
+h4{
+	text-align: center;
+}
+
+form{
+	width: 80%;
+	margin: auto;
+	
+}
+
+form label{
+	display:flex;
+	margin-top:15px ;
+	padding-bottom: 3px;
+	font-size: 18px;
+}
+
+form input{
+	padding: 8px;
+	width: 100%;
+	border: none;
+	border: 1px solid gray;
+	border-radius: 13px;
+	outline: none;
+
+}
+ 
+.but{
+	display: flex;
+}
+form input[type="button"]{
+	width: 50%;
+	height: 35px;
+	margin-left: 8px;
+	margin-top: 20px;
+	border: none;
+	background-color: #49c1a2;
+	color: white;
+	font-size: 15px;
+	cursor: pointer;
+
+}
+
+p{
+	text-align: center;
+	padding-top: 15px;
+	font-size: 15px;
+}
+
+.para2{
+
+	color: #736DC9;
+	font-size: 19px;
+	
+
+}
+
+.para2 a{
+	color: #49c1a2;
+}
+
+select{
+	width: 100%;
+	height: 35px;
+	margin: auto;
+	border-radius: 13px;
+}
+
+@media screen and (max-width: 1200px)
+{
+	.signup{width: 35%;}
+	.signup2{width: 40%;}
+}
+
+@media screen and (max-width: 600px)
+{
+	.signup{width: 60%;}
+	.signup2{width: 60%;}
+}
+
+
+
+
+
+
+									/*German Tour : About Us */
+
+
+
+
+.about1{
+	width: 60%;
+	height: 100%;
+	background-color: whitesmoke;
+	background: linear-gradient(to right bottom,rgba(255, 255, 255,0.5),
+        		 rgba(255, 255, 255, 0.1));
+	backdrop-filter: blur(20px);
+	margin-left: 25%;
+	border-radius: 10px ;
+	line-height: 30px;	
+}
+
+.about1 h1{
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.aboutline{
+	width: 90%;
+	margin: auto;
+	height: 2px;
+	background:gray;
+}
+
+
+.hhh{
+	width: 100%;
+	height: 100vh;
+	justify-content: center;	
+}
+
+.help_form{
+	position: relative;
+	top: 30px;
+	
+	width: 35%;
+	height: 400px;
+}
+
+.help_form input,.help_form select,.help_form textarea,.help_form button{
+	line-height: 20px;
+	margin-top: 25px;
+	border: 1px solid gray;
+	border-radius: 8px;
+	padding: 5px 15px 5px 30px;
+	fl
+}
+
+.help_form textarea{
+	width: 100%;
+	height: 80px;
+}
+
+.help_form button{
+	margin-left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+@media screen and (max-width: 1200px)
+{
+	.help_form {width: 40%;}
+
+}
+
+@media screen and (max-width: 600px)
+{
+	.help_form {width: 50%;}
+
 }
